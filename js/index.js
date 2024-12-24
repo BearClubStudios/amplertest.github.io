@@ -15,7 +15,7 @@ function webedition(){
     resetDefault()
     document.getElementById('game-bg').style.backgroundImage = 'url(./images/web-edition.jpg)';
     document.getElementById('game-header').src = './images/web-title.png';
-    document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT WEB EDITION';
+    document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT: FOR WEB BROWSERS';
     document.getElementById('header2').style.display = 'none';
     document.getElementById('header3').style.display = 'block';
     document.getElementById('header4').style.display = 'block';
@@ -32,7 +32,7 @@ function moddededition(){
     resetDefault()
     document.getElementById('game-bg').style.backgroundImage = 'url(./images/modded-edition.jpg)';
     document.getElementById('game-header').src = './images/modded-title.png';
-    document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT MODDED';
+    document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT: MODDED EDITION';
     document.getElementById('header2').style.display = 'block';
     document.getElementById('header3').style.display = 'block';
     document.getElementById('header4').style.display = 'block';
@@ -53,7 +53,7 @@ function eaglercontrols(){
     resetDefault()
     document.getElementById('game-bg').style.backgroundImage = 'url(./images/controls-edition.jpg)';
     document.getElementById('game-header').src = './images/controls-title.png';
-    document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT MOBILE/CONTROLLER';
+    document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT: FOR MOBILE AND CONTROLLER';
     document.getElementById('header2').style.display = 'none';
     document.getElementById('header3').style.display = 'block';
     document.getElementById('header4').style.display = 'block';
