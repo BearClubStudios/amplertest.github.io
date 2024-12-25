@@ -3,7 +3,7 @@
  Containing some of the best clients all in one place!
 
 
-<img src=".github/assets/launcher.png" alt="Launcher Photo"><br>
+<img src=".githu/assets/launcher.png" alt="Launcher Photo"><br>
 
 <hr>
 
