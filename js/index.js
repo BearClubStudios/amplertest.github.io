@@ -166,6 +166,8 @@ function dropdowntoggle(){
 }
 
 function resetSelected() {
+    document.getElementById('gtabs0').style.fontWeight = '';
+    document.getElementById('gtabs0').style.borderLeft = '';
     document.getElementById('gtabs1').style.fontWeight = '';
     document.getElementById('gtabs1').style.borderLeft = '';
     document.getElementById('gtabs2').style.fontWeight = '';
