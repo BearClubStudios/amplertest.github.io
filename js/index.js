@@ -10,6 +10,23 @@ function errorNA() {
     }, 3200);
 }
 
+function newstab(){
+    resetSelected();
+    resetDefault()
+    document.getElementById('game-bg').style.backgroundImage = 'url(./images/newsbg.png)';
+    document.getElementById('game-header').src = './images/newsbg.png';
+    document.getElementById('gameedition').innerHTML = 'NEWS';
+    document.getElementById('header2').style.display = 'none';
+    document.getElementById('header3').style.display = 'block';
+    document.getElementById('header4').style.display = 'block';
+    document.getElementById('header5').style.display = 'block';
+    document.getElementById('header6').style.display = 'block';
+    document.getElementById('gtabs2').style.fontWeight = '700';
+    document.getElementById('gtabs2').style.borderLeft = '#008542 solid 4px';
+    document.getElementById('dropdown1').style.display = 'flex';
+    document.getElementById('dropdown2').style.display = 'flex';
+}
+
 function webedition(){
     resetSelected();
     resetDefault()
