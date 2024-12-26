@@ -144,7 +144,7 @@ function releasetwo() {
     document.getElementById('gametitle').innerHTML = 'Release 2';
     document.getElementById('gameversion').innerHTML = '1.9.4';
     document.getElementById('gameicon').src = './images/m-logo1.png';
-    document.getElementById('playbutton').href = '/mc/194/';
+    document.getElementById('playbutton').href = 'mc/194/EaglercraftL_1.9.4.html';
 }
 
 function latestrelease() {
