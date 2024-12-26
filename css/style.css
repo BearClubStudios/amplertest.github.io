@@ -310,8 +310,8 @@ blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
 
 #gtabs1 img {width: 3vw;}
 #gtabs2 img, #gtabs3 img, #gtabs4 img {width: 2.5vw;}
-#gtabs5 {bottom: 7.5vw;}
-#gtabs6 {bottom: 2.5vw;}
+#gtabs6 {bottom: 7.5vw;}
+#gtabs7 {bottom: 2.5vw;}
 #gtabs5 img, #gtabs6 img {width: 2vw;}
 
 @keyframes drop {
