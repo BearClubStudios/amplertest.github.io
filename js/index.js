@@ -140,6 +140,13 @@ function shadowclient() {
     document.getElementById('playbutton').href = 'mc/shadowclient';
 }
 
+function releasetwo() {
+    document.getElementById('gametitle').innerHTML = 'Release 2';
+    document.getElementById('gameversion').innerHTML = '1.9.4';
+    document.getElementById('gameicon').src = './images/m-logo1.png';
+    document.getElementById('playbutton').href = 'mc/1.8.8/';
+}
+
 function latestrelease() {
     document.getElementById('gametitle').innerHTML = 'Release 1';
     document.getElementById('gameversion').innerHTML = '1.8.8-u41';
