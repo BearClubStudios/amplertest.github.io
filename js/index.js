@@ -144,7 +144,7 @@ function releasetwo() {
     document.getElementById('gametitle').innerHTML = 'Release 2';
     document.getElementById('gameversion').innerHTML = '1.9.4';
     document.getElementById('gameicon').src = './images/m-logo1.png';
-    document.getElementById('playbutton').href = 'mc/1.8.8/';
+    document.getElementById('playbutton').href = 'mc/1.9.4/';
 }
 
 function latestrelease() {
