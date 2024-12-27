@@ -42,7 +42,7 @@ function webedition(){
     document.getElementById('gtabs2').style.borderLeft = '#008542 solid 4px';
     document.getElementById('dropdown1').style.display = 'flex';
     document.getElementById('dropdown2').style.display = 'flex';
-    latestrelease()
+    releasetwo()
 }
 function moddededition(){
     resetSelected();
