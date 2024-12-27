@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mods for EaglerForge</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .header-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #1e1e1e;
+            width: 100%;
+        }
+
+        .header-button {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        h1 {
+            margin-top: 50px;
+            font-size: 1.5rem;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #2a2a2a;
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 5px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .row-title {
+            flex: 1;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: left;
+            padding: 10px;
+            color: white;
+        }
+
+        .editable-text {
+            flex: 2;
+            text-align: center;
+            font-size: 1rem;
+            color: white;
+        }
+
+        .button {
+            flex: 1;
+            background-color: #008542;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .button:hover {
+            background-color: #00a859;
+        }
+
+        .image-box {
+            flex: 1;
+            text-align: right;
+        }
+
+        .image-box img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+            }
+
+            .row-title, .editable-text, .button, .image-box {
+                flex: unset;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        /* Hidden by default, only visible when switching pages */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Page -->
+    <div id="modsPage" class="page active">
+        <div class="header-buttons">
+            <button class="header-button" onclick="closePage()">Close</button>
+            <button class="header-button" onclick="showResourcePacks()">RESOURCE PACKS</button>
+        </div>
+
+        <h1>MODS FOR EAGLERFORGE</h1>
+
+        <!-- Rows for Mods Page -->
+        <div class="row">
+            <div class="row-title">Mod 1</div>
+            <div class="editable-text">Editable (Not Editable on Page)</div>
+            <button class="button">DOWNLOAD</button>
+            <div class="image-box"><img src="https://via.placeholder.com/80" alt="Mod Image"></div>
+        </div>
+        <div class="row">
+            <div class="row-title">Mod 2</div>
+            <div class="editable-text">Editable Text (Not Editable on Page)</div>
+            <button class="button">DOWNLOAD</button>
+            <div class="image-box"><img src="https://via.placeholder.com/80" alt="Mod Image"></div>
+        </div>
+    </div>
+
+    <!-- Resource Packs Page -->
+    <div id="resourcePacksPage" class="page">
+        <div class="header-buttons">
+            <button class="header-button" onclick="closePage()">Close</button>
+            <button class="header-button" onclick="showModsPage()">EaglerForge Mods</button>
+        </div>
+
+        <h1>RESOURCE PACKS FOR EAGLERCRAFT</h1>
+
+        <!-- Rows for Resource Packs Page -->
+        <div class="row">
+            <div class="row-title">Resource Pack 1</div>
+            <div class="editable-text">Editable Text (Not Editable on Page)</div>
+            <button class="button">DOWNLOAD</button>
+            <div class="image-box"><img src="https://via.placeholder.com/80" alt="Resource Pack Image"></div>
+        </div>
+        <div class="row">
+            <div class="row-title">Resource Pack 2</div>
+            <div class="editable-text">Editable Text (Not Editable on Page)</div>
+            <button class="button">DOWNLOAD</button>
+            <div class="image-box"><img src="https://via.placeholder.com/80" alt="Resource Pack Image"></div>
+        </div>
+    </div>
+
+    <script>
+        // Function to show Resource Packs page and hide Mods page
+        function showResourcePacks() {
+            document.getElementById('modsPage').classList.remove('active');
+            document.getElementById('resourcePacksPage').classList.add('active');
+        }
+
+        // Function to show Mods page and hide Resource Packs page
+        function showModsPage() {
+            document.getElementById('resourcePacksPage').classList.remove('active');
+            document.getElementById('modsPage').classList.add('active');
+        }
+
+        // Function to redirect the user to another HTML file
+        function closePage() {
+            window.location.href = "version1.html"; // Replace with the path to your desired HTML file
+        }
+    </script>
+</body>
+</html>
