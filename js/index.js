@@ -25,7 +25,6 @@ function newstab(){
     document.getElementById('gtabs0').style.borderLeft = '#008542 solid 4px';
     document.getElementById('dropdown1').style.display = 'flex';
     document.getElementById('dropdown2').style.display = 'flex';
-    document.getElementById('dropdown2.5').style.display = 'flex';
 }
 
 function webedition(){
