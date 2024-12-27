@@ -207,6 +207,7 @@ function resetSelected() {
     document.getElementById('gtabs6').style.borderLeft = '';
     document.getElementById('dropdown1').style.display = 'none';
     document.getElementById('dropdown2').style.display = 'none';
+    document.getElementById('dropdown2.5').style.display = 'none';
     document.getElementById('dropdown3').style.display = 'none';
     document.getElementById('dropdown4').style.display = 'none';
     document.getElementById('dropdown5').style.display = 'none';
