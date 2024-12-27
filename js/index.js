@@ -84,6 +84,24 @@ function eaglercontrols(){
     dogomobile()
 }
 
+function eaglerservers(){
+    resetSelected();
+    resetDefault()
+    document.getElementById('game-bg').style.backgroundImage = 'url(./images/newsbg.png)';
+    document.getElementById('game-header').src = './images/newsbg.png';
+    document.getElementById('gameedition').innerHTML = 'SERVERS FOR EAGLERCRAFT';
+    document.getElementById('header2').style.display = 'none';
+    document.getElementById('header3').style.display = 'block';
+    document.getElementById('header4').style.display = 'block';
+    document.getElementById('header5').style.display = 'none';
+    document.getElementById('header6').style.display = 'block';
+    document.getElementById('gtabs5').style.fontWeight = '700';
+    document.getElementById('gtabs5').style.borderLeft = '#008542 solid 4px';
+    document.getElementById('dropdown8').style.display = 'flex';
+    document.getElementById('dropdown9').style.display = 'flex';
+    document.getElementById('dropdown10').style.display = 'flex';
+}
+
 function dogomobile() {
     document.getElementById('gametitle').innerHTML = "FlamedDogo's Mobile UI";
     document.getElementById('gameversion').innerHTML = '1.8.8-v3.0.5b';
