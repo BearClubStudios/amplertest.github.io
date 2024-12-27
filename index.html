@@ -70,80 +70,14 @@
                 <p>Mobile/Controller </p>
             </div>
         </div>
-       <!-- Existing clickable div -->
-<div onclick="eaglerservers()" id="gtabs5" class="sidebarOptions">
-    <img src="./images/i-live.png" alt>
-    <div class="gTabsText">
-        <p class="eaglercraftText"> SERVERS : </p>
-        <p>For Eaglercraft </p>
-    </div>
-</div>
-
-<!-- Add the required elements for the function -->
-<div id="game-bg" style="width:100%; height:200px;"></div>
-<img id="game-header" src="" alt="Header" style="width:100px; height:auto;">
-<div id="gameedition"></div>
-<div id="header2" style="display:block;"></div>
-<div id="header3" style="display:none;"></div>
-<div id="header4" style="display:none;"></div>
-<div id="header5" style="display:block;"></div>
-<div id="header6" style="display:none;"></div>
-<div id="dropdown8" style="display:none;"></div>
-<div id="dropdown9" style="display:none;"></div>
-<div id="dropdown10" style="display:none;"></div>
-
-<!-- Iframe for the background image -->
-<iframe id="myIframe" src="about:blank" style="width:100%; height:300px; border:none;"></iframe>
-
-<script>
-    function eaglerservers() {
-        // Reset actions (optional, based on your existing code)
-        resetSelected?.();
-        resetDefault?.();
-
-        // Update background image for the game section
-        document.getElementById('game-bg').style.backgroundImage = 'url(./images/newsbg.png)';
-        document.getElementById('game-header').src = './images/newsbg.png';
-        document.getElementById('gameedition').innerHTML = 'SERVERS FOR EAGLERCRAFT';
-
-        // Toggle visibility of certain headers
-        document.getElementById('header2').style.display = 'none';
-        document.getElementById('header3').style.display = 'block';
-        document.getElementById('header4').style.display = 'block';
-        document.getElementById('header5').style.display = 'none';
-        document.getElementById('header6').style.display = 'block';
-
-        // Style the active tab
-        document.getElementById('gtabs5').style.fontWeight = '700';
-        document.getElementById('gtabs5').style.borderLeft = '#008542 solid 4px';
-
-        // Display dropdowns
-        document.getElementById('dropdown8').style.display = 'flex';
-        document.getElementById('dropdown9').style.display = 'flex';
-        document.getElementById('dropdown10').style.display = 'flex';
-
-        // Access the iframe element by its ID
-        var iframe = document.getElementById('myIframe');
-
-        // Ensure the iframe's content is loaded
-        iframe.onload = function() {
-            var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-
-            // Set the background image inside the iframe
-            iframeDoc.body.style.backgroundImage = 'url("./images/newsbg.png")';
-            iframeDoc.body.style.backgroundSize = 'cover';
-            iframeDoc.body.style.margin = '0';
-            iframeDoc.body.style.padding = '0';
-            iframeDoc.body.style.height = '100vh';
-        };
-
-        // Set the iframe source if it's blank (optional)
-        if (iframe.src === "about:blank") {
-            iframe.src = "about:blank"; // Replace with your desired iframe source
-        }
-    }
-</script>
-
+       <div onclick="eaglerservers()" id="gtabs5" class="sidebarOptions">
+            <img src="./images/i-live.png"
+                 alt>
+            <div class="gTabsText">
+                <p class="eaglercraftText"> SERVERS : </p>
+                <p>For Eaglercraft </p>
+            </div>
+        </div>
         <div id="gtabs6" class="sidebarOptions sidebarBottom" onclick="errorNA()">
             <img src="./images/m-credits.png" alt><div class="gTabsText"><p> Credits</p></div>
         </div>
