@@ -28,7 +28,7 @@
 - [x] Rewrite some of the css and js
 - [ ] Organize code, and add comments
 - [ ] Add a customizable launcher selector
-- [ ] Add the servers screen
+- [x] Add the servers screen
 - [ ] Fix display errors
 - [ ] Offline launcher download?
 - [ ] Implement top bar options
