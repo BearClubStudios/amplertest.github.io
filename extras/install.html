@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minecraft Launcher</title>
+  <style>
+    /* General styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #2b2b2b;
+      color: white;
+    }
+    .container {
+      width: 500px;
+      margin: 50px auto;
+      background-color: #1e1e1e;
+      border-radius: 8px;
+      padding: 20px;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .header input[type="text"] {
+      width: 60%;
+      padding: 5px;
+      background-color: #333;
+      border: 1px solid #444;
+      border-radius: 4px;
+      color: white;
+    }
+    .header .close-btn {
+      background-color: #333;
+      border: 1px solid #444;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: background-color 0.2s;
+    }
+    .header .close-btn:hover {
+      background-color: #444;
+    }
+    .header .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .versions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .versions input {
+      display: none;
+    }
+    .versions label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .versions label span {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border: 2px solid white;
+      border-radius: 3px;
+    }
+    .versions input:checked + span {
+      background-color: #00a800;
+      border-color: #00a800;
+    }
+    .installation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #333;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+    .installation.hidden {
+      display: none;
+    }
+    .installation .info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .installation img {
+      width: 30px;
+      height: 30px;
+    }
+    .installation button {
+      background-color: #00a800;
+      border: none;
+      padding: 5px 10px;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .installation button:hover {
+      background-color: #00c800;
+    }
+    .installation .more-options {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      position: relative;
+    }
+    .dropdown {
+      position: absolute;
+      background-color: #000;
+      color: white;
+      border-radius: 4px;
+      padding: 5px;
+      margin-top: 5px;
+      display: none;
+    }
+    .dropdown a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 5px 10px;
+    }
+    .dropdown a:hover {
+      background-color: #00a800;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Close Button -->
+    <div class="header">
+      <button class="close-btn" onclick="location.href='close.html'">Close</button>
+    </div>
+    
+    <!-- Main Title -->
+    <div class="header">
+      <div class="title">Installations</div>
+    </div>
+
+    <!-- Search and Filters -->
+    <div class="header">
+      <div>
+        <strong>SEARCH</strong>
+        <input type="text" id="searchBar" placeholder="Search installations" onkeyup="filterInstallations()">
+      </div>
+      <div>
+        <strong>SORT BY</strong>
+        <div class="versions">
+          <label>
+            <input type="checkbox" id="releases" checked onchange="filterInstallations()">
+            <span></span> Releases
+          </label>
+          <label>
+            <input type="checkbox" id="snapshots" onchange="filterInstallations()">
+            <span></span> Snapshots
+          </label>
+          <label>
+            <input type="checkbox" id="modded" checked onchange="filterInstallations()">
+            <span></span> Modded
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Installations -->
+    <!-- Astra Client -->
+    <div class="installation modded">
+      <div class="info">
+        <img src="https://raw.githubusercontent.com/BearClubStudios/amplertest.github.io/refs/heads/main/images/m-logo7.png" alt="Astra Client">
+        <div>
+          <div>Astra Client</div>
+          <div style="color: #bbb;">1.8.8-v1.3</div>
+        </div>
+      </div>
+      <div>
+        <button onclick="location.href='https://cdn.discordapp.com/attachments/1124692250778144843/1321495390410772561/Astra_1.4_WASM.html?ex=6772b7fd&is=6771667d&hm=47365bc630a4636bab84e944112a2152b022943a5763de1c17148f7a31f2f9c6&'">Download</button>
+        <button class="more-options" onclick="toggleDropdown(this)">...</button>
+        <div class="dropdown">
+          <a href="https://github.com/BarneyCompiler/AstraClientEagler" target="_blank">View Original Page</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Starlike -->
+    <div class="installation modded">
+      <div class="info">
+        <img src="https://raw.githubusercontent.com/BearClubStudios/amplertest.github.io/refs/heads/main/images/m-logo6.png" alt="Starlike">
+        <div>
+          <div>Starlike</div>
+          <div style="color: #bbb;">1.8.8-v0.3.1</div>
+        </div>
+      </div>
+      <div>
+        <button onclick="location.href='https://cdn.discordapp.com/attachments/1289354456965582949/1304891650144866364/Starlike_v0.3.1_Offline.zip?ex=67724ccd&is=6770fb4d&hm=d7ff5f337ad5ee54b801f0d8cd6826dd5555a7146ec62077ae5f647baef7f190&'">Download</button>
+        <button class="more-options" onclick="toggleDropdown(this)">...</button>
+        <div class="dropdown">
+          <a href="https://git.webmc.xyz/Starlike-Client/Starlike-Client" target="_blank">View Original Page</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Eaglerforge -->
+    <div class="installation modded">
+      <div class="info">
+        <img src="https://raw.githubusercontent.com/BearClubStudios/amplertest.github.io/refs/heads/main/images/m-logo5.png" alt="Eaglerforge">
+        <div>
+          <div>Eaglerforge</div>
+          <div style="color: #bbb;">1.8.8-v1.3.2</div>
+        </div>
+      </div>
+      <div>
+        <button onclick="location.href='https://github.com/eaglerforge/EaglerForge-builds/releases/download/v1.3.2/EaglerForge_v1.3.2_1.8_Offline_en_US.html'">Download</button>
+        <button class="more-options" onclick="toggleDropdown(this)">...</button>
+        <div class="dropdown">
+          <a href="https://github.com/eaglerforge" target="_blank">View Original Page</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resent Client -->
+    <div class="installation modded">
+      <div class="info">
+        <img src="https://raw.githubusercontent.com/BearClubStudios/amplertest.github.io/refs/heads/main/images/m-logo4.png" alt="Resent Client">
+        <div>
+          <div>Resent Client</div>
+          <div style="color: #bbb;">1.8.8-v4.0.p4</div>
+        </div>
+      </div>
+      <div>
+        <button onclick="location.href='https://objects.githubusercontent.com/github-production-release-asset-2e65be/752004526/a478a435-046a-4780-9452-81dae1b4619a?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20241229%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20241229T170122Z&X-Amz-Expires=300&X-Amz-Signature=704dad329622e13803d0ff06ef0f06d28ccabe95c61afc9029579a6b43aa4b34&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3DResent-4.0-Patch-4-Signed.html&response-content-type=application%2Foctet-stream'">Download</button>
+        <button class="more-options" onclick="toggleDropdown(this)">...</button>
+        <div class="dropdown">
+          <a href="https://github.com/Elite4r/Resent-Client" target="_blank">View Original Page</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Shadow Client -->
+    <div class="installation modded">
+      <div class="info">
+        <img src="https://github.com/BearClubStudios/amplertest.github.io/blob/main/images/m-logo3.png?raw=true" alt="Shadow Client">
+        <div>
+          <div>Shadow Client</div>
+          <div style="color: #bbb;">1.8.8-v4.5-u34</div>
+        </div>
+      </div>
+      <div>
+        <button onclick="location.href='https://github.com/PeytonPlayz595/Shadow-4.0/blob/main/javascript/Shadow_Client_en_US.html'">Download</button>
+        <button class="more-options" onclick="toggleDropdown(this)">...</button>
+        <div class="dropdown">
+          <a href="https://github.com/PeytonPlayz595/Shadow-4.0" target="_blank">View Original Page</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional installations -->
+
+  </div>
+
+  <script>
+    // Save checkbox states to localStorage
+    const checkboxes = document.querySelectorAll('.versions input');
+    checkboxes.forEach(checkbox => {
+      const id = checkbox.id;
+      checkbox.checked = JSON.parse(localStorage.getItem(id)) || false;
+      checkbox.addEventListener('change', () => {
+        localStorage.setItem(id, checkbox.checked);
+        filterInstallations();  // Re-filter after change
+      });
+    });
+
+    // Dropdown toggle
+    function toggleDropdown(button) {
+      const dropdown = button.nextElementSibling;
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Filter installations
+    function filterInstallations() {
+      const query = document.getElementById('searchBar').value.toLowerCase();
+      const releasesChecked = document.getElementById('releases').checked;
+      const snapshotsChecked = document.getElementById('snapshots').checked;
+      const moddedChecked = document.getElementById('modded').checked;
+
+      const installations = document.querySelectorAll('.installation');
+
+      installations.forEach(installation => {
+        const name = installation.querySelector('.info div div').innerText.toLowerCase();
+        const isModded = installation.classList.contains('modded');
+        const isRelease = installation.classList.contains('releases');
+        const isSnapshot = installation.classList.contains('snapshots');
+
+        const matchesQuery = name.includes(query);
+        const matchesCategory = (isModded && moddedChecked) || (isRelease && releasesChecked) || (isSnapshot && snapshotsChecked);
+
+        if (matchesQuery && matchesCategory) {
+          installation.classList.remove('hidden');
+        } else {
+          installation.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
