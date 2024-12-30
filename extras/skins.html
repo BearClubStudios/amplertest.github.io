@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #2c2f33;
+      background-color: #121212; /* OLED black background */
       color: white;
       display: flex;
       flex-direction: column;
@@ -27,15 +27,31 @@
       margin-top: 20px;
     }
 
-    .current {
+    .preview {
       text-align: center;
+      background-color: #1e1e1e; /* Darker box color */
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid #222; /* Darker border, lighter than background */
     }
 
-    .current img {
+    .preview img {
       width: 100px;
       height: 160px;
-      border: 2px solid white;
       margin-bottom: 10px;
+    }
+
+    .library-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .library-title {
+      font-weight: bold;
+      font-size: 24px; /* Increased size for Library title */
+      margin-bottom: 15px; /* Increased margin below the title */
     }
 
     .library {
@@ -43,14 +59,16 @@
       grid-template-columns: repeat(3, 1fr);
       gap: 10px;
       width: 320px;
+      margin-top: 10px; /* Adjusted to move library skins slightly lower */
     }
 
     .library img {
       width: 70px;
       height: 110px;
       cursor: pointer;
-      border: 2px solid white;
+      border: 2px solid #222; /* Darker border, lighter than background */
       transition: border-color 0.2s;
+      border-radius: 10px; /* Rounded corners */
     }
 
     .library img:hover {
@@ -91,19 +109,19 @@
       padding: 10px;
       font-size: 14px;
       cursor: pointer;
-      background-color: #555;
-      border: none;
+      background-color: #1e1e1e; /* Dark button background */
+      border: 2px solid #333; /* Darker border */
       border-radius: 5px;
       color: white;
       transition: background-color 0.3s;
     }
 
     .tools button:hover {
-      background-color: #777;
+      background-color: #333;
     }
 
     canvas {
-      border: 2px solid white;
+      border: 2px solid #222; /* Dark border around the canvas */
       margin-top: 20px;
     }
 
@@ -123,20 +141,28 @@
     }
 
     .modal-content {
-      background: #444;
+      background: #2c2f33;
       padding: 20px;
       border-radius: 10px;
       text-align: center;
       color: white;
       width: 300px;
+      max-width: 90%;
+      border: 2px solid #444;
     }
 
     .modal-content input {
-      width: 80%;
+      width: 100%;
       padding: 10px;
       margin-bottom: 10px;
       border: none;
       border-radius: 5px;
+      background-color: #555;
+      color: white;
+    }
+
+    .modal-content input::placeholder {
+      color: #bbb;
     }
 
     .modal-content button {
@@ -147,6 +173,7 @@
       background-color: #5cb85c;
       color: white;
       cursor: pointer;
+      width: 100%;
     }
 
     .modal-content button:hover {
@@ -166,18 +193,21 @@
   <h1>Skin Editor</h1>
 
   <div class="container">
-    <!-- Current Skin -->
-    <div class="current">
-      <h2>Current</h2>
+    <!-- Preview -->
+    <div class="preview">
+      <h2>Preview</h2>
       <img id="currentSkin" src="https://mc-heads.net/body/Steve" alt="Current Skin">
-      <p>Steve</p>
+      <p id="currentUsername">Steve</p>
     </div>
 
     <!-- Library -->
-    <div class="library" id="library">
-      <div class="new-skin" onclick="openModal()">
-        <div class="new-skin-circle">+</div>
-        <p>New Skin</p>
+    <div class="library-container">
+      <div class="library-title">Library</div>
+      <div class="library" id="library">
+        <div class="new-skin" onclick="openModal()">
+          <div class="new-skin-circle">+</div>
+          <p>New Skin</p>
+        </div>
       </div>
     </div>
   </div>
@@ -204,8 +234,8 @@
   <script>
     const canvas = document.getElementById("skinEditor");
     const ctx = canvas.getContext("2d");
-    const colorPicker = document.getElementById("colorPicker");
     const currentSkin = document.getElementById("currentSkin");
+    const currentUsername = document.getElementById("currentUsername");
     const library = document.getElementById("library");
     const modal = document.getElementById("modal");
     const usernameInput = document.getElementById("usernameInput");
@@ -218,14 +248,23 @@
 
     // Add skin to library
     function addSkinToLibrary(username) {
+      const div = document.createElement("div");
+      div.classList.add("new-skin");
+
       const img = document.createElement("img");
       img.src = `https://mc-heads.net/body/${username}/gif`; // Animated skin preview
       img.alt = username;
       img.onclick = () => loadSkin(username);
-      library.appendChild(img);
+
+      const name = document.createElement("p");
+      name.textContent = username;
+
+      div.appendChild(img);
+      div.appendChild(name);
+      library.appendChild(div);
     }
 
-    // Load skin into canvas
+    // Load skin into canvas and update username
     function loadSkin(username) {
       const img = new Image();
       img.crossOrigin = "anonymous";
@@ -235,6 +274,7 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
         currentSkin.src = `https://mc-heads.net/body/${username}`;
+        currentUsername.textContent = username;
       };
     }
 
