@@ -20,6 +20,35 @@
       margin-top: 20px;
     }
 
+    /* Close button styles */
+    .close-button-container {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    .tools button, .tools input {
+      padding: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #1e1e1e; /* Dark button background */
+      border: 2px solid #333; /* Darker border */
+      border-radius: 5px;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    .tools button:hover {
+      background-color: #333;
+    }
+
+    .tools a {
+      text-decoration: none;
+      display: inline-block;
+    }
+
     .container {
       display: flex;
       flex-direction: row;
@@ -99,27 +128,6 @@
       background-color: #777;
     }
 
-    .tools {
-      margin-top: 20px;
-      display: flex;
-      gap: 10px;
-    }
-
-    .tools button, .tools input {
-      padding: 10px;
-      font-size: 14px;
-      cursor: pointer;
-      background-color: #1e1e1e; /* Dark button background */
-      border: 2px solid #333; /* Darker border */
-      border-radius: 5px;
-      color: white;
-      transition: background-color 0.3s;
-    }
-
-    .tools button:hover {
-      background-color: #333;
-    }
-
     canvas {
       border: 2px solid #222; /* Dark border around the canvas */
       margin-top: 20px;
@@ -190,6 +198,11 @@
   </style>
 </head>
 <body>
+  <!-- Close button above title -->
+  <div class="close-button-container">
+    <a href="../index.html"><button class="close-button">Close</button></a>
+  </div>
+
   <h1>Skin Editor</h1>
 
   <div class="container">
