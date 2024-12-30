@@ -17,16 +17,31 @@
     }
 
     h1 {
-      margin-top: 20px;
+      margin: 0;
     }
 
-    /* Close button styles */
-    .close-button-container {
-      width: 100%;
+    .header-container {
       display: flex;
+      align-items: center;
       justify-content: flex-start;
+      width: 100%;
       padding: 10px;
-      margin-top: 10px;
+    }
+
+    .close-button {
+      padding: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #1e1e1e; /* Dark button background */
+      border: 2px solid #333; /* Darker border */
+      border-radius: 5px;
+      color: white;
+      transition: background-color 0.3s;
+      margin-right: 10px;
+    }
+
+    .close-button:hover {
+      background-color: #333;
     }
 
     .tools button, .tools input {
@@ -198,12 +213,13 @@
   </style>
 </head>
 <body>
-  <!-- Close button above title -->
-  <div class="close-button-container">
-    <a href="../index.html"><button class="close-button">Close</button></a>
+  <!-- Header with Close Button -->
+  <div class="header-container">
+    <a href="../index.html">
+      <button class="close-button">Close</button>
+    </a>
+    <h1>Skin Editor</h1>
   </div>
-
-  <h1>Skin Editor</h1>
 
   <div class="container">
     <!-- Preview -->
@@ -253,19 +269,17 @@
     const modal = document.getElementById("modal");
     const usernameInput = document.getElementById("usernameInput");
 
-    // Load skins from localStorage
     function loadLibrary() {
       const savedSkins = JSON.parse(localStorage.getItem("skins")) || [];
       savedSkins.forEach(skin => addSkinToLibrary(skin));
     }
 
-    // Add skin to library
     function addSkinToLibrary(username) {
       const div = document.createElement("div");
       div.classList.add("new-skin");
 
       const img = document.createElement("img");
-      img.src = `https://mc-heads.net/body/${username}/gif`; // Animated skin preview
+      img.src = `https://mc-heads.net/body/${username}/gif`;
       img.alt = username;
       img.onclick = () => loadSkin(username);
 
@@ -277,7 +291,6 @@
       library.appendChild(div);
     }
 
-    // Load skin into canvas and update username
     function loadSkin(username) {
       const img = new Image();
       img.crossOrigin = "anonymous";
@@ -291,17 +304,14 @@
       };
     }
 
-    // New skin (blank canvas)
     function newSkin() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-    // Clear the canvas
     function clearCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-    // Download skin
     function downloadSkin() {
       const link = document.createElement("a");
       link.download = "custom-skin.png";
@@ -309,17 +319,14 @@
       link.click();
     }
 
-    // Open modal
     function openModal() {
       modal.style.display = "flex";
     }
 
-    // Close modal
     function closeModal() {
       modal.style.display = "none";
     }
 
-    // Import skin from username
     function importSkin() {
       const username = usernameInput.value.trim();
       if (username) {
@@ -329,7 +336,6 @@
       }
     }
 
-    // Save skin to localStorage
     function saveSkinToLocal(username) {
       const savedSkins = JSON.parse(localStorage.getItem("skins")) || [];
       if (!savedSkins.includes(username)) {
@@ -338,7 +344,6 @@
       }
     }
 
-    // Load default skin and library on page load
     window.onload = () => {
       loadSkin("Steve");
       loadLibrary();
