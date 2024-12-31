@@ -159,10 +159,17 @@ function shadowclient() {
     document.getElementById('playbutton').href = 'mc/shadowclient';
 }
 
+function newestrelease() {
+    document.getElementById('gametitle').innerHTML = 'Latest Release';
+    document.getElementById('gameversion').innerHTML = '1.11.2-u35 ultimate';
+    document.getElementById('gameicon').src = './images/dblock.webp';
+    document.getElementById('playbutton').href = 'mc/1.11.2/Game.html';
+}
+
 function releasetwo() {
     document.getElementById('gametitle').innerHTML = 'Release 2';
     document.getElementById('gameversion').innerHTML = '1.9.4-u35 ultimate';
-    document.getElementById('gameicon').src = './images/m-logo1.png';
+    document.getElementById('gameicon').src = './images/gblock.webp';
     document.getElementById('playbutton').href = 'mc/194/EaglercraftL_1.9.4.html';
 }
 
