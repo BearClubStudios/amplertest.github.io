@@ -106,8 +106,9 @@
     }
     .box .play-btn:hover {
       transform: scale(1.1); /* Slightly enlarges on hover */
-      animation: rainbow-once 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; /* Apply animation smoothly */
+      animation: rainbow-once 3s linear forwards; /* 3s duration, constant speed */
     }
+
     @keyframes rainbow-once {
       0% {
         background: linear-gradient(
