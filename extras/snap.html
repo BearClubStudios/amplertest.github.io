@@ -106,10 +106,10 @@
     }
     .box .play-btn:hover {
       transform: scale(1.1); /* Slightly enlarges on hover */
-      animation: rainbow-loop 5s linear infinite; /* 5s duration, seamless loop */
+      animation: rainbow-once 3s linear forwards; /* 3s duration, constant speed */
     }
 
-    @keyframes rainbow-loop {
+    @keyframes rainbow-once {
       0% {
         background: linear-gradient(
           90deg,
@@ -120,17 +120,9 @@
         background-size: 400%;
         background-position: 0%;
       }
-      25% {
-        background-size: 500%;
-        background-position: 25%;
-      }
       50% {
         background-size: 600%;
         background-position: 50%;
-      }
-      75% {
-        background-size: 700%;
-        background-position: 75%;
       }
       100% {
         background: linear-gradient(
