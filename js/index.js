@@ -40,7 +40,6 @@ function webedition(){
     document.getElementById('header6').style.display = 'block';
     document.getElementById('gtabs2').style.fontWeight = '700';
     document.getElementById('gtabs2').style.borderLeft = '#008542 solid 4px';
-    document.getElementById('dropdown11').style.display = 'flex';
     document.getElementById('dropdown25').style.display = 'flex';
     document.getElementById('dropdown2').style.display = 'flex';
     document.getElementById('dropdown1').style.display = 'flex';
