@@ -88,7 +88,7 @@ function eaglercontrols(){
 function snapshots(){
     resetSelected();
     resetDefault()
-    document.getElementById('game-bg').style.backgroundImage = 'url(./images/controls-edition.jpg)';
+    document.getElementById('game-bg').style.backgroundImage = 'url(./images/snapshotsbg.jpeg)';
     document.getElementById('game-header').src = './images/snapshotslogo.png';
     document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT: SNAPSHOTS';
     document.getElementById('header2').style.display = 'none';
