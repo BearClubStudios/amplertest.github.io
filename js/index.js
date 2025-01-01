@@ -41,7 +41,7 @@ function webedition(){
     document.getElementById('gtabs2').style.fontWeight = '700';
     document.getElementById('gtabs2').style.borderLeft = '#008542 solid 4px';
     document.getElementById('dropdown11').style.display = 'flex';
-    document.getElementById('dropdown2_5').style.display = 'flex';
+    document.getElementById('dropdown25').style.display = 'flex';
     document.getElementById('dropdown2').style.display = 'flex';
     document.getElementById('dropdown1').style.display = 'flex';
     releasetwo()
@@ -216,7 +216,7 @@ function resetSelected() {
     document.getElementById('gtabs6').style.borderLeft = '';
     document.getElementById('dropdown1').style.display = 'none';
     document.getElementById('dropdown2').style.display = 'none';
-    document.getElementById('dropdown2_5').style.display = 'none';
+    document.getElementById('dropdown25').style.display = 'none';
     document.getElementById('dropdown3').style.display = 'none';
     document.getElementById('dropdown4').style.display = 'none';
     document.getElementById('dropdown5').style.display = 'none';
