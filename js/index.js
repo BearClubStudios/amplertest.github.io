@@ -98,10 +98,8 @@ function snapshots(){
     document.getElementById('header6').style.display = 'block';
     document.getElementById('gtabs44').style.fontWeight = '700';
     document.getElementById('gtabs44').style.borderLeft = '#008542 solid 4px';
-    document.getElementById('dropdown8').style.display = 'flex';
-    document.getElementById('dropdown9').style.display = 'flex';
-    document.getElementById('dropdown10').style.display = 'flex';
-    dogomobile()
+    document.getElementById('dropdown43').style.display = 'flex';
+    snapshotsdn()
 }
 
 function eaglerservers(){
@@ -175,6 +173,13 @@ function shadowclient() {
     document.getElementById('gametitle').innerHTML = 'Shadow Client';
     document.getElementById('gameversion').innerHTML = '1.8.8-v4.5-u34';
     document.getElementById('gameicon').src = './images/m-logo3.png';
+    document.getElementById('playbutton').href = 'mc/shadowclient';
+}
+
+function snapshotsdn() {
+    document.getElementById('gametitle').innerHTML = 'Open Snapshots';
+    document.getElementById('gameversion').innerHTML = ' ';
+    document.getElementById('gameicon').src = './images/loom.png';
     document.getElementById('playbutton').href = 'mc/shadowclient';
 }
 
