@@ -221,6 +221,8 @@ function resetSelected() {
     document.getElementById('gtabs3').style.borderLeft = '';
     document.getElementById('gtabs4').style.fontWeight = '';
     document.getElementById('gtabs4').style.borderLeft = '';
+    document.getElementById('gtabs44').style.fontWeight = '';
+    document.getElementById('gtabs44').style.borderLeft = '';
     document.getElementById('gtabs5').style.fontWeight = '';
     document.getElementById('gtabs5').style.borderLeft = '';
     document.getElementById('gtabs6').style.fontWeight = '';
