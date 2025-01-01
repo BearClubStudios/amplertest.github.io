@@ -100,24 +100,21 @@
       cursor: pointer;
       margin-left: auto;
       text-decoration: none;
-      transition: transform 0.3s ease, background 1.5s ease-out;
       background-size: 300%;
+      transition: transform 0.3s ease-out; /* smooth transform transition */
+      will-change: transform; /* hint for smoother animations */
     }
     .box .play-btn:hover {
       transform: scale(1.1); /* Slightly enlarges on hover */
-      animation: rainbow-once 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; /* One-time animation */
+      animation: rainbow-once 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; /* Apply animation smoothly */
     }
     @keyframes rainbow-once {
       0% {
         background: linear-gradient(
           90deg,
-          #ff0000,
-          #ff7f00,
-          #ffff00,
-          #00ff00,
-          #00ffff,
-          #0000ff,
-          #8b00ff
+          #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff,
+          #ff1493, #ff69b4, #ff6347, #ff4500, #ffd700, #adff2f, #7fff00,
+          #00fa9a, #00bfff, #1e90ff, #8a2be2, #ff8c00, #d2691e
         );
         background-size: 400%;
         background-position: 0%;
@@ -129,18 +126,9 @@
       100% {
         background: linear-gradient(
           90deg,
-          #ff0000,
-          #ff007f,
-          #ff00ff,
-          #7f00ff,
-          #0000ff,
-          #007fff,
-          #00ffff,
-          #00ff7f,
-          #00ff00,
-          #7fff00,
-          #ffff00,
-          #ff7f00
+          #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff,
+          #ff1493, #ff69b4, #ff6347, #ff4500, #ffd700, #adff2f, #7fff00,
+          #00fa9a, #00bfff, #1e90ff, #8a2be2, #ff8c00, #d2691e
         );
         background-size: 400%;
         background-position: 100%;
