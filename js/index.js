@@ -85,6 +85,25 @@ function eaglercontrols(){
     dogomobile()
 }
 
+function snapshots(){
+    resetSelected();
+    resetDefault()
+    document.getElementById('game-bg').style.backgroundImage = 'url(./images/controls-edition.jpg)';
+    document.getElementById('game-header').src = './images/snapshotslogo.png';
+    document.getElementById('gameedition').innerHTML = 'EAGLERCRAFT: SNAPSHOTS';
+    document.getElementById('header2').style.display = 'none';
+    document.getElementById('header3').style.display = 'block';
+    document.getElementById('header4').style.display = 'block';
+    document.getElementById('header5').style.display = 'none';
+    document.getElementById('header6').style.display = 'block';
+    document.getElementById('gtabs44').style.fontWeight = '700';
+    document.getElementById('gtabs44').style.borderLeft = '#008542 solid 4px';
+    document.getElementById('dropdown8').style.display = 'flex';
+    document.getElementById('dropdown9').style.display = 'flex';
+    document.getElementById('dropdown10').style.display = 'flex';
+    dogomobile()
+}
+
 function eaglerservers(){
     resetSelected();
     resetDefault()
