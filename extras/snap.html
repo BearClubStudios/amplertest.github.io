@@ -100,28 +100,49 @@
       cursor: pointer;
       margin-left: auto;
       text-decoration: none;
-      transition: transform 0.3s ease, background 1.5s linear;
+      transition: transform 0.3s ease, background 1.5s ease-out;
       background-size: 300%;
     }
     .box .play-btn:hover {
       transform: scale(1.1); /* Slightly enlarges on hover */
-      background: linear-gradient(
-        90deg,
-        red,
-        orange,
-        yellow,
-        green,
-        cyan,
-        blue,
-        violet
-      );
-      animation: rainbow 2s linear infinite; /* Continuously animates */
+      animation: rainbow-once 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; /* One-time animation */
     }
-    @keyframes rainbow {
+    @keyframes rainbow-once {
       0% {
+        background: linear-gradient(
+          90deg,
+          #ff0000,
+          #ff7f00,
+          #ffff00,
+          #00ff00,
+          #00ffff,
+          #0000ff,
+          #8b00ff
+        );
+        background-size: 400%;
         background-position: 0%;
       }
+      50% {
+        background-size: 600%;
+        background-position: 50%;
+      }
       100% {
+        background: linear-gradient(
+          90deg,
+          #ff0000,
+          #ff007f,
+          #ff00ff,
+          #7f00ff,
+          #0000ff,
+          #007fff,
+          #00ffff,
+          #00ff7f,
+          #00ff00,
+          #7fff00,
+          #ffff00,
+          #ff7f00
+        );
+        background-size: 400%;
         background-position: 100%;
       }
     }
