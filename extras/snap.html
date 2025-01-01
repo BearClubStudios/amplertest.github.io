@@ -91,7 +91,7 @@
       margin-right: 10px;
     }
     .box .play-btn {
-      background-color: #1fa04c; /* Solid green by default */
+      background-color: #1fa04c; /* Default green */
       border: none;
       color: #fff;
       padding: 8px 15px;
@@ -100,40 +100,11 @@
       cursor: pointer;
       margin-left: auto;
       text-decoration: none;
-      background-size: 300%;
-      transition: transform 0.3s ease-out; /* smooth transform transition */
-      will-change: transform; /* hint for smoother animations */
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
     .box .play-btn:hover {
-      transform: scale(1.1); /* Slightly enlarges on hover */
-      animation: rainbow-once 3s linear forwards; /* 3s duration, constant speed */
-    }
-
-    @keyframes rainbow-once {
-      0% {
-        background: linear-gradient(
-          90deg,
-          #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff,
-          #ff1493, #ff69b4, #ff6347, #ff4500, #ffd700, #adff2f, #7fff00,
-          #00fa9a, #00bfff, #1e90ff, #8a2be2, #ff8c00, #d2691e
-        );
-        background-size: 400%;
-        background-position: 0%;
-      }
-      50% {
-        background-size: 600%;
-        background-position: 50%;
-      }
-      100% {
-        background: linear-gradient(
-          90deg,
-          #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff,
-          #ff1493, #ff69b4, #ff6347, #ff4500, #ffd700, #adff2f, #7fff00,
-          #00fa9a, #00bfff, #1e90ff, #8a2be2, #ff8c00, #d2691e
-        );
-        background-size: 400%;
-        background-position: 100%;
-      }
+      background-color: #2db855; /* Richer green on hover */
+      transform: scale(1.05); /* Slight scale effect for subtle feedback */
     }
   </style>
 </head>
@@ -147,15 +118,15 @@
       <input type="text" id="search-bar" placeholder="Search snapshots..." onkeyup="filterBoxes()" />
     </div>
     <div id="box-container">
-      <!-- Snapshot 1.11.2 -->
-      <div class="box" data-name="1.11.2">
-        <a href="snapshot-1.11.2.png" class="image-link">
-          <img src="snapshot-1.11.2.png" alt="Snapshot 1.11.2">
+      <!-- Snapshot 1.20.0 -->
+      <div class="box" data-name="1.20.0">
+        <a href="snapshot-1.20.png" class="image-link">
+          <img src="snapshot-1.20.png" alt="Snapshot 1.20.0">
         </a>
         <div class="info">
-          <span class="title">Snapshot 1.11.2</span>
+          <span class="title">Snapshot 1.20.0</span>
         </div>
-        <a href="play-1.11.2.html" class="play-btn">Play</a>
+        <a href="play-1.20.html" class="play-btn">Play</a>
       </div>
 
       <!-- Snapshot 1.14.4 -->
@@ -169,15 +140,15 @@
         <a href="play-1.14.html" class="play-btn">Play</a>
       </div>
 
-      <!-- Snapshot 1.20.0 -->
-      <div class="box" data-name="1.20.0">
-        <a href="snapshot-1.20.png" class="image-link">
-          <img src="snapshot-1.20.png" alt="Snapshot 1.20.0">
+      <!-- Snapshot 1.11.2 -->
+      <div class="box" data-name="1.11.2">
+        <a href="snapshot-1.11.2.png" class="image-link">
+          <img src="snapshot-1.11.2.png" alt="Snapshot 1.11.2">
         </a>
         <div class="info">
-          <span class="title">Snapshot 1.20.0</span>
+          <span class="title">Snapshot 1.11.2</span>
         </div>
-        <a href="play-1.20.html" class="play-btn">Play</a>
+        <a href="play-1.11.2.html" class="play-btn">Play</a>
       </div>
     </div>
   </div>
