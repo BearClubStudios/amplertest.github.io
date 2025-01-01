@@ -40,7 +40,6 @@ function webedition(){
     document.getElementById('header6').style.display = 'block';
     document.getElementById('gtabs2').style.fontWeight = '700';
     document.getElementById('gtabs2').style.borderLeft = '#008542 solid 4px';
-    document.getElementById('dropdown11').style.display = 'flex';
     document.getElementById('dropdown2.5').style.display = 'flex';
     document.getElementById('dropdown2').style.display = 'flex';
     document.getElementById('dropdown1').style.display = 'flex';
@@ -160,17 +159,10 @@ function shadowclient() {
     document.getElementById('playbutton').href = 'mc/shadowclient';
 }
 
-function newestrelease() {
-    document.getElementById('gametitle').innerHTML = 'Latest Release';
-    document.getElementById('gameversion').innerHTML = '1.11.2-u35 ultimate';
-    document.getElementById('gameicon').src = './images/dblock.webp';
-    document.getElementById('playbutton').href = 'mc/1.11.2/Game.html';
-}
-
 function releasetwo() {
     document.getElementById('gametitle').innerHTML = 'Release 2';
     document.getElementById('gameversion').innerHTML = '1.9.4-u35 ultimate';
-    document.getElementById('gameicon').src = './images/gblock.webp';
+    document.getElementById('gameicon').src = './images/m-logo1.png';
     document.getElementById('playbutton').href = 'mc/194/EaglercraftL_1.9.4.html';
 }
 
@@ -225,7 +217,6 @@ function resetSelected() {
     document.getElementById('dropdown8').style.display = 'none';
     document.getElementById('dropdown9').style.display = 'none';
     document.getElementById('dropdown10').style.display = 'none';
-    document.getElementById('dropdown11').style.display = 'none';
 }
 
 function resetDefault() {
