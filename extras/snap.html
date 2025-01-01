@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snapshots</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e; /* Dark gray background */
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 400px;
+      background-color: #2a2a2a;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+    .close-btn {
+      text-decoration: none;
+      color: #fff;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #444;
+    }
+    .close-btn:hover {
+      background-color: #555;
+    }
+    .search-bar {
+      margin: 20px 0;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      background-color: #3a3a3a;
+      color: #fff;
+    }
+    .box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #333;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .box:hover {
+      background-color: #444;
+    }
+    .box .info {
+      text-align: center;
+      flex: 1;
+    }
+    .box .info .title {
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .box .info .version {
+      font-size: 12px;
+      color: #aaa;
+    }
+    .box img {
+      width: 40px;
+      height: 40px;
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+    .box a.image-link {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .box .play-btn {
+      background-color: #1fa04c;
+      border: none;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      cursor: pointer;
+      margin-left: auto;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .box .play-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 300%;
+      height: 100%;
+      background: linear-gradient(
+        90deg, 
+        red, orange, yellow, green, cyan, blue, violet
+      );
+      transition: all 0.5s ease;
+    }
+    .box .play-btn:hover::before {
+      left: -200%;
+    }
+    .box .play-btn span {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Snapshots</h1>
+      <a href="../index.html" class="close-btn">Close</a>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search-bar" placeholder="Search snapshots..." onkeyup="filterBoxes()" />
+    </div>
+    <div id="box-container">
+      <!-- Snapshot 1.11.2 -->
+      <div class="box" data-name="1.11.2">
+        <a href="snapshot-1.11.2.png" class="image-link">
+          <img src="snapshot-1.11.2.png" alt="Snapshot 1.11.2">
+        </a>
+        <div class="info">
+          <span class="title">Snapshot 1.11.2</span>
+          <span class="version">1.11.2</span>
+        </div>
+        <a href="play-1.11.2.html" class="play-btn">
+          <span>Play</span>
+        </a>
+      </div>
+
+      <!-- Snapshot 1.14.4 -->
+      <div class="box" data-name="1.14">
+        <a href="snapshot-1.14.png" class="image-link">
+          <img src="snapshot-1.14.png" alt="Snapshot 1.14">
+        </a>
+        <div class="info">
+          <span class="title">Snapshot 1.14.4</span>
+          <span class="version">1.14.4</span>
+        </div>
+        <a href="play-1.14.html" class="play-btn">
+          <span>Play</span>
+        </a>
+      </div>
+
+      <!-- Snapshot 1.20.0 -->
+      <div class="box" data-name="1.20">
+        <a href="snapshot-1.20.png" class="image-link">
+          <img src="snapshot-1.20.png" alt="Snapshot 1.20">
+        </a>
+        <div class="info">
+          <span class="title">Snapshot 1.20.0</span>
+          <span class="version">1.20.0</span>
+        </div>
+        <a href="play-1.20.html" class="play-btn">
+          <span>Play</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterBoxes() {
+      const query = document.getElementById("search-bar").value.toLowerCase();
+      const boxes = document.querySelectorAll(".box");
+
+      boxes.forEach(box => {
+        const name = box.getAttribute("data-name").toLowerCase();
+        if (name.includes(query)) {
+          box.style.display = "flex";
+        } else {
+          box.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>
