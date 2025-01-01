@@ -243,6 +243,7 @@ function resetSelected() {
     document.getElementById('dropdown8').style.display = 'none';
     document.getElementById('dropdown9').style.display = 'none';
     document.getElementById('dropdown10').style.display = 'none';
+    document.getElementById('dropdown43').style.display = 'none';
 }
 
 function resetDefault() {
