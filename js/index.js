@@ -105,7 +105,7 @@ function snapshots(){
 function eaglerservers(){
     resetSelected();
     resetDefault()
-    document.getElementById('game-bg').style.backgroundImage = 'url(./images/serverlist.png)';
+    document.getElementById('game-bg').style.backgroundImage = 'url(./images/serverlists.png)';
     document.getElementById('game-header').src = './images/newsbg.png';
     document.getElementById('gameedition').innerHTML = 'SERVERS FOR EAGLERCRAFT';
     document.getElementById('header2').style.display = 'none';
