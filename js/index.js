@@ -180,7 +180,7 @@ function snapshotsdn() {
     document.getElementById('gametitle').innerHTML = 'Open Snapshots';
     document.getElementById('gameversion').innerHTML = 'Play BETA Releases';
     document.getElementById('gameicon').src = './images/looms.png';
-    document.getElementById('playbutton').href = '/extras/snap.html#';
+    document.getElementById('playbutton').href = '/extras/snap.html';
 }
 
 function releasetwo() {
