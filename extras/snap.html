@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snapshots</title>
   <style>
+    /* General Styles */
     body {
       font-family: Arial, sans-serif;
-      background-color: #1e1e1e; /* Dark gray background */
+      background-color: #1e1e1e;
       color: #fff;
       margin: 0;
       padding: 0;
@@ -16,6 +17,7 @@
       align-items: center;
       height: 100vh;
     }
+
     .container {
       width: 400px;
       background-color: #2a2a2a;
@@ -23,15 +25,18 @@
       padding: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
+
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+
     .header h1 {
       font-size: 20px;
       margin: 0;
     }
+
     .close-btn {
       text-decoration: none;
       color: #fff;
@@ -43,12 +48,15 @@
       border-radius: 5px;
       background-color: #444;
     }
+
     .close-btn:hover {
       background-color: #555;
     }
+
     .search-bar {
       margin: 20px 0;
     }
+
     .search-bar input {
       width: 100%;
       padding: 10px;
@@ -58,6 +66,8 @@
       background-color: #3a3a3a;
       color: #fff;
     }
+
+    /* Box Styles */
     .box {
       display: flex;
       align-items: center;
@@ -68,26 +78,31 @@
       border-radius: 5px;
       cursor: pointer;
     }
+
     .box:hover {
       background-color: #444;
     }
+
     .box .info {
       text-align: center;
       flex: 1;
     }
+
     .box .info .title {
       font-weight: bold;
       font-size: 14px;
       margin-bottom: 5px;
     }
+
     .box img {
       width: 40px;
       height: 40px;
       margin-left: 10px;
       border-radius: 5px;
     }
+
     .box .play-btn {
-      background-color: #1fa04c; /* Default green */
+      background-color: #1fa04c;
       border: none;
       color: #fff;
       padding: 8px 15px;
@@ -96,62 +111,72 @@
       cursor: pointer;
       margin-left: auto;
       text-decoration: none;
-      transition: background-color 0.3s ease, transform 0.2s ease;
     }
-    .box .play-btn:hover {
-      background-color: #2db855; /* Richer green on hover */
-      transform: scale(1.05); /* Slight scale effect for subtle feedback */
-    }
-    /* Popup styling */
+
     .popup {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
       display: none;
-      justify-content: center;
-      align-items: center;
-    }
-    .popup-content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       background-color: #2a2a2a;
       padding: 20px;
       border-radius: 8px;
-      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       width: 300px;
     }
-    .popup-content h2 {
+
+    .popup .popup-title {
       font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .popup .popup-message {
       margin-bottom: 20px;
     }
-    .popup-content .confirm-btn {
+
+    .popup .play-btn {
       width: 100%;
-      padding: 10px 15px;
+      background-color: #1fa04c;
+      color: white;
+      font-size: 14px;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .popup .play-btn.disabled {
+      background-color: #555;
+      pointer-events: none;
+    }
+
+    .popup .close-btn {
+      background-color: #f44336;
+      padding: 5px 10px;
+      font-size: 14px;
+      color: white;
       border: none;
       border-radius: 5px;
-      font-size: 16px;
-      color: #fff;
-      background-color: #444;
-      cursor: not-allowed;
-      position: relative;
-      overflow: hidden;
-    }
-    .popup-content .confirm-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      background-color: #2db855;
-      transition: width 3s linear;
-    }
-    .popup-content .confirm-btn.ready {
       cursor: pointer;
     }
-    .popup-content .confirm-btn.ready::before {
+
+    .popup .close-btn:hover {
+      background-color: #e53935;
+    }
+
+    .progress-bar {
       width: 100%;
+      height: 10px;
+      background-color: #444;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0;
+      background-color: #1fa04c;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -173,7 +198,7 @@
         <div class="info">
           <span class="title">Snapshot 1.20.0</span>
         </div>
-        <button class="play-btn" onclick="showPopup('play-1.20.html')">Play</button>
+        <a href="#" class="play-btn" onclick="showPopup('1.20.0')">Play</a>
       </div>
 
       <!-- Snapshot 1.14.4 -->
@@ -184,7 +209,7 @@
         <div class="info">
           <span class="title">Snapshot 1.14.4</span>
         </div>
-        <button class="play-btn" onclick="showPopup('play-1.14.html')">Play</button>
+        <a href="#" class="play-btn" onclick="showPopup('1.14.4')">Play</a>
       </div>
 
       <!-- Snapshot 1.11.2 -->
@@ -195,64 +220,86 @@
         <div class="info">
           <span class="title">Snapshot 1.11.2</span>
         </div>
-        <button class="play-btn" onclick="showPopup('play-1.11.2.html')">Play</button>
+        <a href="#" class="play-btn" onclick="showPopup('1.11.2')">Play</a>
       </div>
     </div>
   </div>
 
-  <!-- Popup -->
-  <div class="popup" id="popup">
-    <div class="popup-content">
-      <h2>Are you sure you want to play this version?</h2>
-      <button id="confirm-btn" class="confirm-btn" disabled>Loading...</button>
+  <!-- Popups -->
+  <div class="popup" id="popup-1.20.0">
+    <div class="popup-title">Snapshot 1.20.0</div>
+    <div class="popup-message">You are about to play Snapshot 1.20.0. Keep in mind that this IS NOT a full port of 1.20.0. (1.20.0 version by EaglyMC)</div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-1.20.0"></div>
     </div>
+    <button class="play-btn disabled" id="play-1.20.0" onclick="window.location.href='play-1.20.html'">Read</button>
+    <button class="close-btn" onclick="closePopup('1.20.0')">Close</button>
+  </div>
+
+  <div class="popup" id="popup-1.14.4">
+    <div class="popup-title">Snapshot 1.14.4</div>
+    <div class="popup-message">You are about to play Snapshot 1.14.4. Keep in mind this IS NOT a finished port of 1.14.4. Singleplayer IS NOT implemented yet and not many multiplayer servers support 1.14.4. (1.14.4 made by cobblesteve01)</div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-1.14.4"></div>
+    </div>
+    <button class="play-btn disabled" id="play-1.14.4" onclick="window.location.href='play-1.14.html'">Read</button>
+    <button class="close-btn" onclick="closePopup('1.14.4')">Close</button>
+  </div>
+
+  <div class="popup" id="popup-1.11.2">
+    <div class="popup-title">Snapshot 1.11.2</div>
+    <div class="popup-message">You are about to play Snapshot 1.11.2. Please keep in mind that this IS NOT a full port of 1.11.2. Some items, animations, etc are not added yet. (1.11.2 added by and UNKOWN person because many are taking credit.)</div>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progress-1.11.2"></div>
+    </div>
+    <button class="play-btn disabled" id="play-1.11.2" onclick="window.location.href='../mc/1.11.2/Game.html'">Read</button>
+    <button class="close-btn" onclick="closePopup('1.11.2')">Close</button>
   </div>
 
   <script>
-    let redirectURL = '';
+    // Function to show the popup
+    function showPopup(version) {
+      // Show the popup for the version
+      document.getElementById('popup-' + version).style.display = 'block';
+      
+      // Start the countdown for the green fill animation
+      let progressBar = document.getElementById('progress-' + version);
+      let progressFill = 0;
 
-    function showPopup(url) {
-      redirectURL = url;
-      const popup = document.getElementById('popup');
-      const confirmBtn = document.getElementById('confirm-btn');
-
-      // Reset button state
-      confirmBtn.disabled = true;
-      confirmBtn.classList.remove('ready');
-      confirmBtn.querySelector('::before').style.width = '0';
-
-      popup.style.display = 'flex';
-
-      // Start the cooldown effect
-      setTimeout(() => {
-        confirmBtn.disabled = false;
-        confirmBtn.classList.add('ready');
-        confirmBtn.innerText = 'Play';
-      }, 3000); // 3-second cooldown
+      const interval = setInterval(() => {
+        if (progressFill < 100) {
+          progressFill += 1;
+          progressBar.style.width = progressFill + '%';
+        } else {
+          clearInterval(interval);
+          // Enable play button and change text to "Play"
+          document.getElementById('play-' + version).innerText = 'Play';
+          document.getElementById('play-' + version).classList.remove('disabled');
+          
+          // Change button color briefly to signal readiness
+          setTimeout(() => {
+            document.getElementById('play-' + version).style.backgroundColor = '#1fa04c';
+          }, 500);
+        }
+      }, 100);
     }
 
-    document.getElementById('confirm-btn').addEventListener('click', () => {
-      if (!document.getElementById('confirm-btn').disabled) {
-        window.location.href = redirectURL;
-      }
-    });
+    // Function to close the popup
+    function closePopup(version) {
+      document.getElementById('popup-' + version).style.display = 'none';
+    }
 
-    document.getElementById('popup').addEventListener('click', (e) => {
-      if (e.target === document.getElementById('popup')) {
-        document.getElementById('popup').style.display = 'none';
-      }
-    });
-
+    // Function to filter boxes based on search query
     function filterBoxes() {
-      const query = document.getElementById('search-bar').value.toLowerCase();
-      const boxes = document.querySelectorAll('.box');
+      const query = document.getElementById("search-bar").value.toLowerCase();
+      const boxes = document.querySelectorAll(".box");
 
       boxes.forEach(box => {
-        const name = box.getAttribute('data-name').toLowerCase();
+        const name = box.getAttribute("data-name").toLowerCase();
         if (name.includes(query)) {
-          box.style.display = 'flex';
+          box.style.display = "flex";
         } else {
-          box.style.display = 'none';
+          box.style.display = "none";
         }
       });
     }
