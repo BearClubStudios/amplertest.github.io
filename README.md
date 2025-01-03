@@ -3,7 +3,8 @@
  Containing some of the best clients all in one place!
 
 
-<img src=".githu/assets/launcher.png" alt="Launcher Photo"><br>
+> [!IMPORTANT]
+> **I am not affiliated, own, or work at Eagtek, Eaglercraft, Mojang, Microsoft, or Minecraft. I only worked on this website, but have not made, worked on, or am affiliated with eaglercraft.**
 
 <hr>
 
@@ -36,8 +37,7 @@
 
 <hr>
 
-> [!IMPORTANT]
-> **I am not affiliated, own, or work at Eagtek, Eaglercraft, Mojang, Microsoft, or Minecraft. I only worked on this website, but have not made, worked on, or am affiliated with eaglercraft.**
+
 
 
 
