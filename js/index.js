@@ -13,7 +13,7 @@ function errorNA() {
 function newstab(){
     resetSelected();
     resetDefault()
-    document.getElementById('game-bg').style.backgroundImage = 'url(./images/newsbg.png)';
+    document.getElementById('game-bg').style.backgroundImage = 'url(./images/comingsoon.png)';
     document.getElementById('game-header').src = './images/newsbg.png';
     document.getElementById('gameedition').innerHTML = 'NEWS';
     document.getElementById('header2').style.display = 'none';
@@ -105,7 +105,7 @@ function snapshots(){
 function eaglerservers(){
     resetSelected();
     resetDefault()
-    document.getElementById('game-bg').style.backgroundImage = 'url(./images/serverlists.png)';
+    document.getElementById('game-bg').style.backgroundImage = 'url(./images/comingsoon.png)';
     document.getElementById('game-header').src = './images/newsbg.png';
     document.getElementById('gameedition').innerHTML = 'SERVERS FOR EAGLERCRAFT';
     document.getElementById('header2').style.display = 'none';
